@@ -4,20 +4,20 @@ MPJ Express v0.44 introduced a new runtime to bootstrap MPI processes in a Hadoo
 be found in the [Research Paper](http://www.sciencedirect.com/science/article/pii/S1877050915011874)
 
 This guide will help the users to launch MPJ Express applications in a Hadoop cluster
-###Pre requisites 
+### Pre requisites 
 - Apache Hadoop v2.3.0 and above
 - MPJ Express v0.44
 
-###Apache Hadoop Configurations
+### Apache Hadoop Configurations
 - [Single Node Configuration](http://hadoop.apache.org/docs/stable/hadoop-project-dist/hadoop-common/SingleCluster.html)
 - [Cluster Configuration](http://hadoop.apache.org/docs/stable/hadoop-project-dist/hadoop-common/ClusterSetup.html)
 
-###Before you proceed
+### Before you proceed
 - Set the env variables e.g $HADOOP_HOME
 - Set configuration files in $HADOOP_CONF_DIR 
 - ResourceManager , NodeManager, DataNode and NameNode daemons are running
 
-###Installing MPJ Express
+### Installing MPJ Express
 - ```git clone https://github.com/hex-dump/MPJ-Express-Hadoop.git```
 - Set MPJ_HOME and PATH variables
   * ```export MPJ_HOME=<path-to-mpjexpress>```
@@ -27,7 +27,7 @@ This guide will help the users to launch MPJ Express applications in a Hadoop cl
   * ```cd $MPJ_HOME```
   * ```ant hadoop```
 
-###Compiling a Hello World Application
+### Compiling a Hello World Application
 - cd to **mpjusr** directory
 - Write Hello World parallel Java program and save it as HelloWorld.java  
 ```
@@ -45,7 +45,7 @@ This guide will help the users to launch MPJ Express applications in a Hadoop cl
 - Compile: ```javac -cp .:$MPJ_HOME/lib/mpj.jar HelloWorld.java```
 - Create HelloWorld jar file: ```jar cf HelloWorld.jar HelloWorld.class```
 
-###Running MPJ Express programs in Hadoop cluster
+### Running MPJ Express programs in Hadoop cluster
 Assuming your hadoop cluster is running, run the HelloWorld application:  
 ```mpjrun.sh -yarn -np 2 -dev niodev -wdir <path-to-mpjusr> -jar <path-to-HelloWorld.jar> HelloWorld```  
 
